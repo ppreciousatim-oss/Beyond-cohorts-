@@ -1,0 +1,159 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --purple:#534AB7;
+  --purple-dark:#3C3489;
+  --light:#F7F7FC;
+  --text:#1A1A1A;
+  --muted:#6B7280;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#fafafa;
+}
+
+.auth-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+
+.auth-left{
+  position:relative;
+  background:linear-gradient(rgba(83,74,183,0.7),rgba(60,52,137,0.9)),
+  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+}
+
+.register-bg{
+  background:linear-gradient(rgba(83,74,183,0.7),rgba(60,52,137,0.9)),
+  url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+}
+
+.brand-content{
+  position:relative;
+  z-index:2;
+  max-width:420px;
+  text-align:center;
+  padding:20px;
+}
+
+.brand-content h1{
+  font-size:52px;
+  margin-bottom:18px;
+}
+
+.brand-content p{
+  line-height:1.8;
+  font-size:16px;
+}
+
+.auth-right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  background:white;
+}
+
+.auth-form{
+  width:100%;
+  max-width:420px;
+}
+
+.auth-form h2{
+  font-size:34px;
+  margin-bottom:10px;
+  color:var(--text);
+}
+
+.subtitle{
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+.input-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:20px;
+}
+
+.input-group label{
+  margin-bottom:8px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.input-group input{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:15px;
+  outline:none;
+  transition:0.2s ease;
+}
+
+.input-group input:focus{
+  border-color:var(--purple);
+}
+
+.btn-primary{
+  width:100%;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  background:linear-gradient(
+        90deg,
+        #4114aa,
+        #275ed4
+    );
+  color:white;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.btn-primary:hover{
+  background:var(--purple-dark);
+  transform:translateY(-2px);
+}
+
+.switch-text{
+  margin-top:20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.switch-text a{
+  color:var(--purple);
+  text-decoration:none;
+  font-weight:600;
+}
+
+@media(max-width:900px){
+
+  .auth-container{
+    grid-template-columns:1fr;
+  }
+
+  .auth-left{
+    display:none;
+  }
+
+  .auth-right{
+    padding:30px 20px;
+  }
+}

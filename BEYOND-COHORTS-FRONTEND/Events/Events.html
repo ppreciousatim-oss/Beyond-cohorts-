@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="events.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>Events</h2>
+  <ul>
+    <li>
+      <a href="../ADMIN DASHBOARD/dashboard/dashboard.html">
+        <i class='bx bx-grid-alt'></i>
+        <span class="link-name">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="../ADMIN DASHBOARD/user/user.html">
+        <i class='bx bx-user'></i>
+        <span class="link-name">Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="Events.html" class="active">
+        <i class='bx bx-calendar'></i>
+        <span class="link-name">Events</span>
+      </a>
+    </li>
+    <li>
+      <a href="../ADMIN DASHBOARD/messages/messages.html">
+        <i class='bx bx-message-rounded-dots'></i>
+        <span class="link-name">Messages</span>
+      </a>
+    </li>
+    <li>
+      <a href="../ADMIN DASHBOARD/Report/reports.html">
+        <i class='bx bx-bar-chart'></i>
+        <span class="link-name">Reports</span>
+      </a>
+    </li>
+    <li>
+      <a href="../ADMIN DASHBOARD/settings/settings.html">
+        <i class='bx bx-cog'></i>
+        <span class="link-name">Settings</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <h1>Event Management</h1>
+    <div class="top-right">
+      <div class="search-box">
+        <i class="fa fa-search"></i>
+        <input type="text" id="searchEvent" placeholder="Search events...">
+      </div>
+      <i class="fa fa-bell bell"></i>
+    </div>
+  </div>
+
+  <!-- ANALYTICS CARDS -->
+  <div class="cards">
+    <div class="card">
+      <h3>Total Events</h3>
+      <p class="count" id="Eventcounter">0</p>
+    </div>
+    <div class="card">
+      <h3>Hackathons</h3>
+      <p class="count">0</p>
+    </div>
+    <div class="card">
+      <h3>Workshops</h3>
+      <p class="count">0</p>
+    </div>
+    <div class="card">
+      <h3>Registrations</h3>
+      <p class="count">0</p>
+    </div>
+  </div>
+
+  <!-- QUICK ACTIONS -->
+  <div class="quick-actions">
+    <button id="createEventBtn">Create Event</button>
+    <button id="exportBtn">Export Events</button>
+    <button id="reminderBtn">Send Reminder</button>
+    <button id="approveAllBtn">Approve All</button>
+  </div>
+
+  <!-- EVENT TABLE -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Banner</th>
+          <th>Event Name</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Registrations</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="eventTable">
+        <!-- Rows loaded dynamically from backend -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RECENT ACTIVITY -->
+  <div class="activity-section">
+    <h2>Recent Activity</h2>
+    <ul id="activityList">
+      <li>Events loaded from backend</li>
+    </ul>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="events.js"></script>
+
+</body>
+</html>

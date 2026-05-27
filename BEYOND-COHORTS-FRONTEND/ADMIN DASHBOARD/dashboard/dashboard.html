@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="wheel.css">
+</head>
+<body>
+
+<!-- AUTH GUARD -->
+<script>
+  if (!localStorage.getItem("token") || !localStorage.getItem("adminLoggedIn")) {
+    window.location.href = "../AdminLogin/adminlogin.html";
+  }
+</script>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <aside>
+    <div class="top">
+      <div class="logo">
+        <img src="../../assets/logo.png" alt="Beyond Cohorts" class="logo-img">
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a href="dashboard.html" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link-name">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="../user/user.html">
+          <i class='bx bx-user'></i>
+          <span class="link-name">Users</span>
+        </a>
+      </li>
+      <li>
+        <a href="../../Events/Events.html">
+          <i class='bx bx-calendar'></i>
+          <span class="link-name">Events</span>
+        </a>
+      </li>
+      <li>
+        <a href="../messages/messages.html">
+          <i class='bx bx-message-rounded-dots'></i>
+          <span class="link-name">Messages</span>
+        </a>
+      </li>
+      <li>
+        <a href="../Report/reports.html">
+          <i class='bx bx-bar-chart'></i>
+          <span class="link-name">Reports</span>
+        </a>
+      </li>
+      <li>
+        <a href="../settings/settings.html">
+          <i class='bx bx-cog'></i>
+          <span class="link-name">Settings</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="logout()">
+          <i class='bx bx-log-out'></i>
+          <span class="link-name">Logout</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- OPPORTUNITIES SIDEBAR -->
+    <div class="sidebar-section">
+      <h3>Opportunities</h3>
+      <div id="opportunitiesList" class="opportunities-list">
+        <p class="empty-state">No opportunities posted yet</p>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <h1>Dashboard</h1>
+    <div class="top-right">
+      <div class="search-box">
+        <i class="fa fa-search"></i>
+        <input type="text" id="searchEvent" placeholder="Search here...">
+      </div>
+      <i class="fa fa-bell bell"></i>
+    </div>
+  </div>
+
+  <!-- TOP BLUE CARD -->
+  <div class="top-card">
+    <div class="profile-info">
+      <h3><i class='bx bx-crown'></i> Hello Admin</h3>
+      <p>Welcome to Beyond Cohorts</p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="card">
+      <i class="fa-solid fa-users"></i>
+      <h4>Total Members</h4>
+      <h2 id="memberCount" class="count">—</h2>
+      <p>Registered users</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-user-check"></i>
+      <h4>Active Users</h4>
+      <h2 id="activeCount" class="count">—</h2>
+      <p>Approved accounts</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-briefcase"></i>
+      <h4>Job Posts</h4>
+      <h2 id="jobsCount" class="count">0</h2>
+      <p>Opportunities posted</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-calendar-days"></i>
+      <h4>Events Created</h4>
+      <h2 id="eventsCount" class="count">—</h2>
+      <p>Total events</p>
+    </div>
+    <div class="card">
+      <i class="fa-brands fa-instagram"></i>
+      <h4>Messages Sent</h4>
+      <h2 id="messagesCount" class="count">0</h2>
+      <p>This week</p>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h4>Mentors</h4>
+      <h2 id="mentorsCount" class="count">0</h2>
+      <p>Active mentors</p>
+    </div>
+  </div>
+
+  <!-- QUICK ACTIONS -->
+  <h3>Quick Actions</h3>
+  <div class="quick-actions">
+    <div class="action">
+      <i class="fa-solid fa-calendar-plus"></i>
+      <button id="addEventBtn">Add Event</button>
+    </div>
+    <div class="action">
+      <i class="fa-solid fa-briefcase"></i>
+      <button id="postJobBtn">Post Opportunity</button>
+    </div>
+    <div class="action">
+      <i class="fa-solid fa-circle-check"></i>
+      <button id="verifyBtn">Verify Users</button>
+    </div>
+    <div class="action">
+      <i class="fa-solid fa-bullhorn"></i>
+      <button id="AnnouncementBtn">Announcements</button>
+    </div>
+  </div>
+
+  <!-- ANALYTICS OVERVIEW -->
+  <h3>Analytics Overview</h3>
+  <section class="analytics">
+    <div class="analytics-card">
+      <h4>New Members</h4>
+      <h1 id="memberCount2">—</h1>
+      <p>Total registered</p>
+    </div>
+    <div class="analytics-card">
+      <h4>Active Users</h4>
+      <h1 id="activeCount2">—</h1>
+      <p>Approved accounts</p>
+    </div>
+    <div class="analytics-card">
+      <h4>Total Events</h4>
+      <h1 id="eventsCount2">—</h1>
+      <p>All events</p>
+    </div>
+  </section>
+
+  <!-- COHORT ANALYTICS WHEEL -->
+  <div class="analytics-container">
+    <h2>Cohort Analytics</h2>
+    <div class="wheel-wrapper">
+      <div class="analytics-wheel">
+        <canvas id="cohortChart" role="img"
+          aria-label="Donut chart showing cohort distribution"
+          style="width:220px;height:220px;">
+        </canvas>
+        <div class="inner-circle">
+          <span id="centerLabel">Total</span>
+          <h3 id="totalUsers">—</h3>
+        </div>
+      </div>
+      <div class="legend">
+        <div class="legend-item" data-index="0">
+          <span class="color cohort1"></span>
+          <div><p>Cohort 1</p><small id="cohort1Percent">—</small></div>
+          <strong id="cohort1Count">—</strong>
+        </div>
+        <div class="legend-item" data-index="1">
+          <span class="color cohort2"></span>
+          <div><p>Cohort 2</p><small id="cohort2Percent">—</small></div>
+          <strong id="cohort2Count">—</strong>
+        </div>
+        <div class="legend-item" data-index="2">
+          <span class="color cohort3"></span>
+          <div><p>Cohort 3</p><small id="cohort3Percent">—</small></div>
+          <strong id="cohort3Count">—</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- OPPORTUNITY MODAL -->
+<div class="opportunity-modal" id="opportunityModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Post New Opportunity</h2>
+    <form class="opportunity-form" id="opportunityForm">
+      <input type="text" id="oppTitle" placeholder="Opportunity Title" required>
+      <textarea id="oppDescription" placeholder="Description" required></textarea>
+      <input type="text" id="oppCompany" placeholder="Company Name" required>
+      <select id="oppCategory" required>
+        <option value="">Select Category</option>
+        <option value="internship">Internship</option>
+        <option value="fellowship">Fellowship</option>
+        <option value="scholarship">Scholarship</option>
+        <option value="job">Job</option>
+      </select>
+      <select id="oppType" required>
+        <option value="">Select Type</option>
+        <option value="remote">Remote</option>
+        <option value="onsite">Fulltime Onsite</option>
+        <option value="hybrid">Hybrid</option>
+      </select>
+      <input type="text" id="oppLocation" placeholder="Location" required>
+      <input type="date" id="oppDeadline" required>
+      <input type="file" id="oppImage" accept="image/*" placeholder="Opportunity Image">
+      <p class="form-message"></p>
+      <button type="submit">Post Opportunity</button>
+    </form>
+  </div>
+</div>
+
+<script src="../AdminLogin/admin-pro.js"></script>
+<script src="wheel.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>

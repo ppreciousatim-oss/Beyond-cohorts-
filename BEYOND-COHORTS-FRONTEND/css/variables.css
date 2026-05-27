@@ -1,0 +1,27 @@
+/* css/variables.css */
+:root {
+    /* Colors - Inspired by professional networking + elegance */
+    --primary-color: #000000;
+    /* Deep black from logo */
+    --secondary-color: #1a1a1a;
+    --accent-color: #D4AF37;
+    /* Gold/Champagne accent for "Queen" vibe */
+    --text-main: #333333;
+    --text-light: #666666;
+    --bg-body: #f4f4f7;
+    --white: #ffffff;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    /* Elegant serif for the 'B' vibe */
+    --font-body: 'Inter', sans-serif;
+    /* Clean readable font for text */
+
+    /* Spacing */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+}

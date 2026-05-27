@@ -1,0 +1,313 @@
+/* ───────── RESET ───────── */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --purple:#534AB7;
+  --purple-dark:#3C3489;
+  --purple-light:#EEEDFE;
+  --gray:#6B7280;
+  --light:#F7F7FB;
+  --border:#E5E7EB;
+  --shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#FAFAFC;
+  color:#111827;
+}
+
+/* ───────── MAIN CONTAINER ───────── */
+
+.workspace{
+  min-height:100vh;
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.phone-window{
+  width:100%;
+  max-width:1200px;
+  background:white;
+  border-radius:30px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+/* ───────── TOP NAV ───────── */
+
+.home-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.brand-mark{
+  width:120px;
+  border-radius:12px;
+}
+
+.menu-container{
+  position:relative;
+}
+
+.menu-button{
+  background:var(--purple);
+  color:white;
+  border:none;
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.dropdown-menu{
+  position:absolute;
+  right:0;
+  top:60px;
+  background:white;
+  border-radius:16px;
+  width:180px;
+  box-shadow:var(--shadow);
+  padding:12px;
+  display:none;
+  flex-direction:column;
+  z-index:100;
+}
+
+.dropdown-menu.active{
+  display:flex;
+}
+
+.dropdown-menu a{
+  text-decoration:none;
+  color:#111827;
+  padding:12px;
+  border-radius:10px;
+  transition:0.2s;
+}
+
+.dropdown-menu a:hover{
+  background:var(--purple-light);
+  color:var(--purple);
+}
+
+/* ───────── TITLE ───────── */
+
+.screen-label{
+  font-size:40px;
+  font-weight:700;
+  margin-bottom:30px;
+  color:var(--purple);
+  text-transform:capitalize;
+}
+
+/* ───────── CARDS GRID ───────── */
+
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+
+/* ───────── CARD ───────── */
+
+.course-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:24px;
+  overflow:hidden;
+  transition:0.3s;
+  box-shadow:0 4px 12px rgba(0,0,0,0.04);
+}
+
+.course-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(83,74,183,0.14);
+}
+
+.card-image{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.course-card h2{
+  font-size:20px;
+  padding:20px 20px 10px;
+  line-height:1.4;
+}
+
+.meta{
+  padding:0 20px;
+  color:var(--gray);
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.course-card button{
+  margin:20px;
+  width:calc(100% - 40px);
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:var(--purple);
+  color:white;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.course-card button:hover{
+  background:var(--purple-dark);
+}
+
+/* ───────── VIEW ALL ───────── */
+
+.view-all{
+  display:inline-block;
+  margin-top:30px;
+  text-decoration:none;
+  color:var(--purple);
+  font-weight:600;
+}
+
+/* ───────── SUBSCRIBE SECTION ───────── */
+
+.subscribe-form{
+  display:flex;
+  gap:12px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.subscribe-form input{
+  flex:1;
+  min-width:240px;
+  padding:14px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  outline:none;
+}
+
+.subscribe-form button{
+  padding:14px 24px;
+  border:none;
+  border-radius:14px;
+  background:var(--purple);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.notice{
+  margin-top:20px;
+  background:var(--purple-light);
+  padding:24px;
+  border-radius:20px;
+}
+
+.notice h2{
+  margin-bottom:10px;
+  color:var(--purple);
+}
+
+/* ───────── MODAL ───────── */
+
+.application-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.application-modal.active{
+  display:flex;
+}
+
+.modal-content{
+  background:white;
+  width:90%;
+  max-width:500px;
+  border-radius:24px;
+  padding:30px;
+  position:relative;
+  animation:popup 0.3s ease;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(0.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.close-modal{
+  position:absolute;
+  right:20px;
+  top:20px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.application-form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:20px;
+}
+
+.application-form input{
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+
+.application-form button{
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:var(--purple);
+  color:white;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.form-message{
+  color:var(--purple);
+  font-size:14px;
+}
+
+/* ───────── RESPONSIVE ───────── */
+
+@media(max-width:768px){
+
+  .phone-window{
+    padding:20px;
+  }
+
+  .screen-label{
+    font-size:30px;
+  }
+
+  .course-card h2{
+    font-size:18px;
+  }
+
+}

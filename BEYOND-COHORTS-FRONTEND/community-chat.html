@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Space | Beyond Cohorts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="community-chat.css"/>
+
+</head>
+<body>
+
+  <div class="community-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+        <h2>Beyond Cohorts</h2>
+      </div>
+
+      <ul class="sidebar-links">
+        <li class="active">General Chat</li>
+        <li>Tech Discussions</li>
+        <li>Career Growth</li>
+        <li>Opportunities</li>
+        <li>Hackathons</li>
+      </ul>
+
+    </aside>
+
+    <!-- MAIN CHAT -->
+    <main class="chat-area">
+
+      <div class="chat-header">
+        <h3>General Community</h3>
+        <p>Connect with Code Queen alumni</p>
+      </div>
+
+      <!-- MESSAGES -->
+      <div class="messages" id="messages">
+
+        <div class="message other">
+          <div class="message-info">
+            <strong>Sarah</strong>
+            <span>10:24 AM</span>
+          </div>
+
+          <div class="message-bubble">
+            Welcome to the Beyond Cohorts community 💜
+          </div>
+        </div>
+
+        <div class="message mine">
+          <div class="message-info">
+            <strong>You</strong>
+            <span>10:25 AM</span>
+          </div>
+
+          <div class="message-bubble">
+            Happy to be here 🚀
+          </div>
+        </div>
+
+      </div>
+
+      <!-- INPUT -->
+      <form class="chat-input-area" id="chatForm">
+
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+          required
+        />
+
+        <button type="submit">
+          Send
+        </button>
+
+      </form>
+
+    </main>
+
+  </div>
+
+  <script src="./js/community-chat.js"></script>
+</body>
+</html>

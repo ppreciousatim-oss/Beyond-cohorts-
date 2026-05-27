@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Messages</title>
+      <!-- boxicons  -->
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link
+    rel="stylesheet" href="messages.css" >
+</head>
+
+<body>
+
+<div class="sidebar">
+
+  <h2>Messages</h2>
+ 
+ <ul>
+                     <li>
+                    <a href="../dashboard/dashboard.html" class="active">
+                   <i class='bx bx-grid-alt' ></i>
+                      <span class ="link-name">Dashboard</span>
+                 
+                    </a>
+                    </li>
+                  
+                    
+                     <li>
+                    <a href="../user/user.html">
+                     <i class='bx bx-user' ></i>
+                      <span class ="link-name">Users</span>
+                    
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../Events/Events.html">
+                      <i class='bx bx-calendar' ></i>
+                      <span class ="link-name">Events</span>
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../messages/messages.html">
+                   <i class='bx bx-message-rounded-dots' ></i>
+                      <span class ="link-name">Messages</span>
+                     
+                    </a>
+                    </li>
+                    
+                     <li>
+                    <a href="../report/reports.html">
+                      <i class='bx bx-bar-chart' ></i>
+                      <span class ="link-name">Reports</span>
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../settings/settings.html">
+                      <i class='bx bx-cog' ></i>
+                      <span class ="link-name">Settings</span>
+                     
+                    </a>
+                    </li>
+                       
+                     <li>
+                    <a href="../profile/profile.html">
+                    <i class='bx bxs-user-circle' ></i>
+                      <span class ="link-name">profile</span> 
+                    </a>
+                    </li> 
+            
+                    </a>
+
+                    </li>
+                   
+                  </ul>
+                </div>
+         
+        </aside>   
+    </div>
+
+
+
+<div class="main-content">
+
+  <div class="top-bar">
+
+    <h1>Messages</h1>
+
+    <input
+      type="text"
+      placeholder="Search messages..."
+    >
+
+  </div>
+
+
+
+  <div class="messages-container">
+
+
+    <!-- CHAT LIST -->
+
+    <div class="chat-list">
+
+      <div class="chat-user active">
+
+        <img
+          src="images/profile admin.jpeg"
+        >
+
+        <div>
+
+          <h3>Precious Peace</h3>
+
+          <p>Hello Admin...</p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="chat-user">
+
+        <img
+          src="images/profile admin.jpeg"
+        >
+
+        <div>
+
+          <h3>Nabirah</h3>
+
+          <p>Can you help me?</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- CHAT BOX -->
+
+    <div class="chat-box">
+
+      <div class="chat-header">
+
+        <img
+          src="images/profile admin.jpeg"
+        >
+
+        <h3>Precious Peace</h3>
+
+      </div>
+
+
+
+      <div class="chat-body" id="chatBody">
+
+        <div class="message received">
+          Hello Admin 👋
+        </div>
+
+        <div class="message sent">
+          Hello, how can I help?
+        </div>
+
+      </div>
+
+
+
+      <div class="chat-input">
+
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type message..."
+        >
+
+        <button id="sendBtn">
+          Send
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="messages.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Community Activity</title>
+
+    <!-- boxicons  -->
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link
+    rel="stylesheet" href="community.css" >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+ 
+ <ul>
+                     <li>
+                    <a href="../dashboard/dashboard.html" class="active">
+                   <i class='bx bx-grid-alt' ></i>
+                      <span class ="link-name">Dashboard</span>
+                 
+                    </a>
+                    </li>
+                  
+                    
+                     <li>
+                    <a href="../user/user.html">
+                     <i class='bx bx-user' ></i>
+                      <span class ="link-name">Users</span>
+                    
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../Events/Events.html">
+                      <i class='bx bx-calendar' ></i>
+                      <span class ="link-name">Events</span>
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../messages/messages.html">
+                   <i class='bx bx-message-rounded-dots' ></i>
+                      <span class ="link-name">Messages</span>
+                     
+                    </a>
+                    </li>
+                    
+                     <li>
+                    <a href="../report/reports.html">
+                      <i class='bx bx-bar-chart' ></i>
+                      <span class ="link-name">Reports</span>
+                    </a>
+                    </li>
+
+                   
+                      <li>
+                    <a href="../community/community.html">
+                      <i class='bx bx-cog' ></i>
+                      <span class ="link-name">Settings</span>
+                     
+                    </a>
+                    </li>
+                       
+                     <li>
+                    <a href="../profile/profile.html">
+                    <i class='bx bxs-user-circle' ></i>
+                      <span class ="link-name">profile</span> 
+                    </a>
+                    </li> 
+            
+                    </a>
+
+                    </li>
+                   
+                  </ul>
+                </div>
+         
+        </aside>   
+    </div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+
+  <!-- TOP -->
+
+  <div class="top-bar">
+
+    <h2>
+      Community Activity
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Search..."
+    >
+
+  </div>
+
+
+
+  <!-- ANALYTICS CARDS -->
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Messages Sent</h3>
+      <p>3,420</p>
+    </div>
+
+    <div class="card">
+      <h3>Attendance</h3>
+      <p>1,250</p>
+    </div>
+
+    <div class="card">
+      <h3>Most Active Cohort</h3>
+      <p>Cohort 5</p>
+    </div>
+
+    <div class="card">
+      <h3>Weekly Engagement</h3>
+      <p>87%</p>
+    </div>
+
+  </div>
+
+    <!-- Weekly Engagement -->
+    <div class="chart-box">
+        <h2>Weekly Engagement</h2>
+        <canvas id="engagementChart"></canvas>
+
+        <div class="bar-chart">
+
+            <div class="bar">
+                <span style="height:70%;"></span>
+                <p>Mon</p>
+            </div>
+
+            <div class="bar">
+                <span style="height:90%;"></span>
+                <p>Tue</p>
+            </div>
+
+            <div class="bar">
+                <span style="height:55%;"></span>
+                <p>Wed</p>
+            </div>
+
+            <div class="bar">
+                <span style="height:95%;"></span>
+                <p>Thu</p>
+            </div>
+
+            <div class="bar">
+                <span style="height:80%;"></span>
+                <p>Fri</p>
+            </div>
+
+            <div class="bar">
+                <span style="height:60%;"></span>
+                <p>Sat</p>
+            </div>
+
+            <div class="bar">
+                <span style="height:85%;"></span>
+                <p>Sun</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Attendance -->
+    <div class="chart-box">
+        <h2>Attendance</h2>
+
+        <div class="attendance-circle">
+
+            <div class="circle">
+                <h1>84%</h1>
+                <p>Present</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+  <!-- MESSAGES SECTION -->
+
+  <div class="messages-section">
+
+    <h2>
+      Community Messages
+    </h2>
+
+
+    <!-- MESSAGE CARD -->
+
+    <div class="message-card">
+
+      <img
+        src="images/profile admin.jpeg"
+        class="msg-img"
+      >
+
+      <div class="message-content">
+
+        <h3>
+          Precious Peace
+        </h3>
+
+        <p>
+          Can we have another UI/UX workshop this month?
+        </p>
+
+      </div>
+
+      <button class="reply-btn">
+        Reply
+      </button>
+
+    </div>
+
+
+
+    <div class="message-card">
+
+      <img
+        src="images/profile admin.jpeg"
+        class="msg-img"
+      >
+
+      <div class="message-content">
+
+        <h3>
+          Nabirah
+        </h3>
+
+        <p>
+          I need help accessing certificates.
+        </p>
+
+      </div>
+
+      <button class="reply-btn">
+        Reply
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- REPLY MODAL -->
+
+  <div class="reply-modal" id="replyModal">
+
+    <div class="modal-content">
+
+      <h2>
+        Reply Message
+      </h2>
+
+      <textarea
+        id="replyText"
+        placeholder="Type reply..."
+      ></textarea>
+
+      <div class="modal-buttons">
+
+        <button id="sendReply">
+          Send
+        </button>
+
+        <button id="closeModal">
+          Cancel
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="community.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!-- =========================
+     SETTINGS PAGE HTML
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Settings</title>
+       <!-- boxicons  -->
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link
+    rel="stylesheet"
+    href="settings.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>Settings</h2>
+
+        
+ <ul>
+                     <li>
+                    <a href="../dashboard/dashboard.html" class="active">
+                   <i class='bx bx-grid-alt' ></i>
+                      <span class ="link-name">Dashboard</span>
+                 
+                    </a>
+                    </li>
+                  
+                    
+                     <li>
+                    <a href="../user/user.html">
+                     <i class='bx bx-user' ></i>
+                      <span class ="link-name">Users</span>
+                    
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../Events/Events.html">
+                      <i class='bx bx-calendar' ></i>
+                      <span class ="link-name">Events</span>
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../messages/messages.html">
+                   <i class='bx bx-message-rounded-dots' ></i>
+                      <span class ="link-name">Messages</span>
+                     
+                    </a>
+                    </li>
+                    
+                     <li>
+                    <a href="../report/reports.html">
+                      <i class='bx bx-bar-chart' ></i>
+                      <span class ="link-name">Reports</span>
+                    </a>
+                    </li>
+
+                     <li>
+                    <a href="../settings/settings.html">
+                      <i class='bx bx-cog' ></i>
+                      <span class ="link-name">Settings</span>
+                     
+                    </a>
+                    </li>
+ </ul>
+ </div>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <h1>Settings</h1>
+
+
+        <!-- SETTINGS GRID -->
+
+        <div class="settings-grid">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="left-section">
+
+                <!-- PROFILE SETTINGS -->
+
+                <div class="settings-card">
+
+                    <h2>Profile Settings</h2>
+
+                    <input
+                    type="text"
+                    placeholder="Admin Name">
+
+                    <input
+                    type="email"
+                    placeholder="Admin Email">
+
+                    <button>
+                        Save Changes
+                    </button>
+
+                </div>
+
+
+                <!--  SETTINGS -->
+
+                <div class="settings-card">
+
+                    <h2> Settings</h2>
+
+                    <input
+                    type=""
+                    placeholder="Current ">
+
+                    <input
+                    type=""
+                    placeholder="New ">
+
+                    <button>
+                        Update 
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="right-section">
+
+                <!-- SETTINGS PANEL -->
+
+                <div class="card">
+
+                    <h1>Admin Settings Panel</h1>
+
+
+                    <!-- ADMIN SETTINGS -->
+
+                    <div class="dropdown">
+
+                        <div
+                        class="dropdown-btn"
+                        onclick="toggleDropdown(this)">
+
+                            Admin Settings
+
+                            <span>▼</span>
+
+                        </div>
+
+                        <div class="dropdown-content">
+
+                            <input
+                            type="text"
+                            placeholder="Full Name">
+
+                            <input
+                            type="email"
+                            placeholder="Email">
+
+                            <button>
+                                Save Profile
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MANAGE ADMINS -->
+
+                    <div class="dropdown">
+
+                        <div
+                        class="dropdown-btn"
+                        onclick="toggleDropdown(this)">
+
+                            Manage Admins
+
+                            <span>▼</span>
+
+                        </div>
+
+                        <div class="dropdown-content">
+
+                            <input
+                            type="text"
+                            placeholder="Add Admin">
+
+                            <select>
+
+                                <option>
+                                    Super Admin
+                                </option>
+
+                                <option>
+                                    Moderator
+                                </option>
+
+                            </select>
+
+                            <button>
+                                Add Admin
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PERMISSIONS -->
+
+                    <div class="dropdown">
+
+                        <div
+                        class="dropdown-btn"
+                        onclick="toggleDropdown(this)">
+
+                            Permissions
+
+                            <span>▼</span>
+
+                        </div>
+
+                        <div class="dropdown-content">
+
+                            <label>
+                                <input type="checkbox">
+                                User Management
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Event Editing
+                            </label>
+
+                            <label>
+                                <input type="checkbox">
+                                Delete Content
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SYSTEM SETTINGS -->
+
+                    <div class="dropdown">
+
+                        <div
+                        class="dropdown-btn"
+                        onclick="toggleDropdown(this)">
+
+                            System Settings
+
+                            <span>▼</span>
+
+                        </div>
+
+                        <div class="dropdown-content">
+
+                            <label>
+                                Language
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    English
+                                </option>
+
+                                <option>
+                                    French
+                                </option>
+
+                            </select>
+
+                            <button
+                            id="darkModeBtn">
+
+                                Toggle Dark Mode
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACKUP -->
+
+                    <div class="dropdown">
+
+                        <div
+                        class="dropdown-btn"
+                        onclick="toggleDropdown(this)">
+
+                            Backup & Restore
+
+                            <span>▼</span>
+
+                        </div>
+
+                        <div class="dropdown-content">
+
+                            <button>
+                                Backup Database
+                            </button>
+
+                            <button>
+                                Restore Backup
+                            </button>
+
+                            <button id="logoutBtn"> Logout</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="settings.js"></script>
+
+</body>
+</html>
